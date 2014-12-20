@@ -2,7 +2,7 @@
 require "Cocos2d"
 
 -- cclog
-local cclog = function(...)
+cclog = function(...)
     print(string.format(...))
 end
 
@@ -24,11 +24,10 @@ local function main()
     cc.FileUtils:getInstance():addSearchPath("src")
     cc.FileUtils:getInstance():addSearchPath("res")
     cc.Director:getInstance():getOpenGLView():setDesignResolutionSize(480, 320, 0)
-    
-    --create scene 
-    local scene = require("GameScene")
+    cc.Director:getInstance():setDisplayStats(false)
+
+    local scene = require("SubjectScene")
     local gameScene = scene.create()
-    gameScene:playBgMusic()
     
     if cc.Director:getInstance():getRunningScene() then
         cc.Director:getInstance():replaceScene(gameScene)
