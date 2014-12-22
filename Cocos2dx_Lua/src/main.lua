@@ -1,7 +1,7 @@
 
 require "Cocos2d"
 
--- cclog
+-- cclog log
 cclog = function(...)
     print(string.format(...))
 end
