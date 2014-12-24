@@ -1,5 +1,6 @@
 
-require "Cocos2d"
+--引入lua文件
+require "src/game/res/Require"
 
 -- cclog log
 cclog = function(...)
@@ -23,6 +24,16 @@ local function main()
     
     cc.FileUtils:getInstance():addSearchPath("src")
     cc.FileUtils:getInstance():addSearchPath("res")
+    
+    cc.FileUtils:getInstance():addSearchPath("src/game/res")
+    cc.FileUtils:getInstance():addSearchPath("src/game/start")
+    cc.FileUtils:getInstance():addSearchPath("src/game/scene")
+    cc.FileUtils:getInstance():addSearchPath("src/game/sprite")
+    cc.FileUtils:getInstance():addSearchPath("src/game/wiget")
+    cc.FileUtils:getInstance():addSearchPath("src/game/test")
+    cc.FileUtils:getInstance():addSearchPath("src/game/layer")
+
+
     cc.Director:getInstance():getOpenGLView():setDesignResolutionSize(480, 320, 0)
     cc.Director:getInstance():setDisplayStats(false)
 
